@@ -19,8 +19,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
-        env:
-          VITE_SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+        # env:
+        #   VITE_SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
         run: yarn build
 
       - name: Deploy
