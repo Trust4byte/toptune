@@ -9,17 +9,22 @@ import ProtectedRoute from "./pages/ProtectedRoute.tsx";
 import DashboardPage from "./pages/DashboardPage.tsx";
 import LoginPage from "./pages/LoginPage.tsx";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <ProtectedRoute />,
+      children: [{ path: "", element: <DashboardPage /> }],
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+  ],
   {
-    path: "/",
-    element: <ProtectedRoute />,
-    children: [{ path: "", element: <DashboardPage /> }],
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-]);
+    basename: "/toptune",
+  }
+);
 
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Failed to find the root element");
