@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { AUTH_URL, REDIRECT_URI, SCOPE } from "@/lib/constants";
+import { AUTH_URL, CLIENT_ID, SCOPE } from "@/lib/constants";
 import { useUserStore } from "@/lib/store/userStore";
 import { base64encode, generateRandomString, sha256 } from "@/lib/utils";
 import { Hexagon, Sparkles } from "lucide-react";
@@ -21,11 +21,11 @@ const LoginPage = () => {
     // Set up auth parameters
     const params = {
       response_type: "code",
-      client_id: "e5ebcd8b4a1447c2a5d6306a19f01d94",
+      client_id: CLIENT_ID,
       scope: SCOPE,
       code_challenge_method: "S256",
       code_challenge: codeChallenge,
-      redirect_uri: REDIRECT_URI,
+      redirect_uri: window.location.origin + "/toptune",
     };
 
     // Build and redirect to authorization URL

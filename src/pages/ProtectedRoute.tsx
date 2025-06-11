@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router";
 import axios from "axios";
-import { REDIRECT_URI } from "@/lib/constants";
+import { CLIENT_ID } from "@/lib/constants";
 import { useUserStore } from "@/lib/store/userStore";
 import spotifyApi from "@/api/axios";
 
@@ -47,10 +47,10 @@ const ProtectedRoute = () => {
       const response = await axios.post(
         "https://accounts.spotify.com/api/token",
         new URLSearchParams({
-          client_id: "e5ebcd8b4a1447c2a5d6306a19f01d94",
+          client_id: CLIENT_ID,
           grant_type: "authorization_code",
           code,
-          redirect_uri: REDIRECT_URI,
+          redirect_uri: window.location.origin + "/toptune",
           code_verifier: codeVerifier || "",
         }).toString(),
         {

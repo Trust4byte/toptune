@@ -1,4 +1,5 @@
 // import { CLIENT_ID } from "@/lib/constants";
+import { CLIENT_ID } from "@/lib/constants";
 import axios from "axios";
 
 const spotifyApi = axios.create({
@@ -38,7 +39,7 @@ const refreshToken = async () => {
     const response = await axios.post(
       "https://accounts.spotify.com/api/token",
       new URLSearchParams({
-        client_id: "e5ebcd8b4a1447c2a5d6306a19f01d94",
+        client_id: CLIENT_ID,
         grant_type: "refresh_token",
         refresh_token: refresh_token,
       }).toString(),

@@ -2,7 +2,7 @@
 // For local dev: .env file with VITE_SPOTIFY_CLIENT_ID
 // For GitHub Pages: Repository secret SPOTIFY_CLIENT_ID injected during build
 // export const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-// export const CLIENT_ID = "e5ebcd8b4a1447c2a5d6306a19f01d94";
+export const CLIENT_ID = "e5ebcd8b4a1447c2a5d6306a19f01d94";
 
 const isDevelopment =
   window.location.hostname === "localhost" ||
